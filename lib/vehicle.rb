@@ -35,4 +35,14 @@ class Vehicle
   def self.clear
     @@vehicles = []
   end
+
+  def self.find(identification)
+    found_vehicle = nil
+    @@vehicles.each() do |vehicle|
+      if vehicle.id().eql?(identification.to_i())
+        found_vehicle = vehicle
+      end
+    end
+    found_vehicle
+  end
 end
