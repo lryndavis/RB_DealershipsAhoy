@@ -22,4 +22,8 @@ class Vehicle
   def self.all
     @@vehicles
   end
+
+  def save
+    @@vehicles.push(self)
+  end
 end

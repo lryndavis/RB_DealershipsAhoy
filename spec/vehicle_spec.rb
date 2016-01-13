@@ -25,6 +25,14 @@ describe('.all') do
   end
 end
 
+describe('#save') do
+  it('will save a vehicle to the array') do
+    test_vehicle = toyota_prius_2000()
+    test_vehicle.save()
+    expect(Vehicle.all()).to(eq([test_vehicle]))
+  end
+end
+
 def toyota_prius_2000
   Vehicle.new("Toyota", "Prius", 2000)
 end
