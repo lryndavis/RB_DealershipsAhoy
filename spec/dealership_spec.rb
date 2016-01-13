@@ -32,6 +32,15 @@ describe(Dealership) do
     end
   end
 
+  describe('#add_vehicle') do
+    it('will add a vehicle to the array of vehicles') do
+      test_dealership = bobs_cars
+      test_vehicle = toyota_prius_2000
+      test_dealership.add_vehicle(test_vehicle)
+      expect(test_dealership.cars()).to(eq([test_vehicle]))
+    end
+  end
+
   describe('.all') do
     it('is empty at first') do
       expect(Dealership.all()).to(eq([]))
@@ -59,4 +68,8 @@ end
 
 def bobs_cars
   Dealership.new("Bob's Used Cars")
+end
+
+def toyota_prius_2000
+  Vehicle.new("Toyota", "Prius", 2000)
 end

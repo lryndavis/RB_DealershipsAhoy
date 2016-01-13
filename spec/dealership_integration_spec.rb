@@ -15,7 +15,7 @@ describe('the DealerShip paths') do
       click_link('Add Dealership')
       fill_in('dealerName', :with => "Don Trump's Caddy Shack")
       click_button('Add')
-      click_link('See Dealership List')
+      click_link('Go to Dealership List')
       expect(page).to(have_content("Don Trump's Caddy Shack"))
     end
   end
@@ -27,6 +27,20 @@ describe('the DealerShip paths') do
       expect(page).to(have_content("Don Trump's Caddy Shack"))
     end
   end
+
+  describe('the add a vehicle to a dealership path', {:type => :feature}) do
+    it("adds a new vehicle to the dealership's list") do
+      add_don_trumps_caddy_shack()
+      click_dealer_link()
+      click_link("Add a Vehicle")
+      fill_in('make', :with => 'Toyota')
+      fill_in('model', :with => 'Camry')
+      fill_in('year', :with => '1989')
+      click_button('Add')
+      click_link("Go to Don Trump's Caddy Shack")
+      expect(page).to(have_content('1989 Toyota Camry'))
+    end
+  end
 end
 
 def add_don_trumps_caddy_shack
@@ -34,7 +48,7 @@ def add_don_trumps_caddy_shack
   click_link('Add Dealership')
   fill_in('dealerName', :with => "Don Trump's Caddy Shack")
   click_button('Add')
-  click_link('See Dealership List')
+  click_link('Go to Dealership List')
 end
 
 def click_dealer_link

@@ -23,6 +23,10 @@ class Dealership
     @@dealerships.push(self)
   end
 
+  def add_vehicle(vehicle)
+    @cars.push(vehicle)
+  end
+
   def self.all
     @@dealerships
   end

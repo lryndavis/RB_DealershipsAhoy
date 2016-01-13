@@ -1,0 +1,16 @@
+<h1>Add a New Vehicle</h1>
+
+<form class="form-inline" action="/vehicles" method="post">
+  <input type="hidden" id="dealershipID" name="dealershipID" value="<%= @dealership.id() %>">
+
+  <label for="make">Make</label>
+  <input class="form-control" type="text" name="make" id="make" placeholder="Make">
+
+  <label for="model">Model</label>
+  <input class="form-control" type="text" name="model" id="model" placeholder="Model">
+
+  <label for="year">Year</label>
+  <input class="form-control" type="text" name="year" id="year" placeholder="Year">
+
+  <button class="btn btn-default" type="submit">Add</button>
+</form>
