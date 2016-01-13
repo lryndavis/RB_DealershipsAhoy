@@ -24,6 +24,12 @@ post('/dealerships') do
   new_dealer = params[:dealerName]
   Dealership.new(new_dealer).save()
   @dealerships = Dealership.all()
+
+  clear_setting = params[:clear_setting]
+  if clear_setting == "clicked"
+    Dealership.clear()
+  end
+
   erb(:success_dealer)
 end
 

@@ -1,7 +1,17 @@
-<h1>Ahoy! Ye DealerShips be Sailin':</h1>
+<% if @dealerships.length() == 0 %>
+  <h1>Arrggh! Ya need to add a DealerShip!</h1>
+<% else %>
+  <h1>Ahoy! Ye DealerShips be Sailin':</h1>
 
-<ul>
-  <% @dealerships.each() do |dealership| %>
-    <li><a href="/dealerships/<%= dealership.id() %>"><%= dealership.name() %></a></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @dealerships.each() do |dealership| %>
+      <li><a href="/dealerships/<%= dealership.id() %>"><%= dealership.name() %></a></li>
+    <% end %>
+  </ul>
+
+  <form action="/dealerships" method="post">
+    <button class="btn btn-default" type="submit" value="clicked" name="clear_setting">Clear Dealership List</button>
+  </form>
+<% end %>
+
+<a href="/dealerships/new"><button class="btn btn-default" type="button">Add Dealership</button></a>
