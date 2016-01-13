@@ -44,9 +44,17 @@ post('/vehicles') do
   make = params[:make]
   model = params[:model]
   year = params[:year]
-  @vehicle = Vehicle.new(make, model, year)
+  dealership_id = params[:dealershipID]
+  @vehicle = Vehicle.new(make, model, year, dealership_id)
   @vehicle.save()
   @dealership = Dealership.find(params[:dealershipID].to_i())
   @dealership.add_vehicle(@vehicle)
   erb(:success_vehicle)
+end
+
+# Renders page for a specific vehicle
+get('/vehicles/:id') do
+  @vehicle = Vehicle.find(params[:id].to_i())
+  @dealership = Dealership.find(@vehicle.dealership_id().to_i())
+  erb(:vehicle)
 end

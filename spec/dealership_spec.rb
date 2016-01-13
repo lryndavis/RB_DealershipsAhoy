@@ -71,5 +71,5 @@ def bobs_cars
 end
 
 def toyota_prius_2000
-  Vehicle.new("Toyota", "Prius", 2000)
+  Vehicle.new("Toyota", "Prius", 2000, 1)
 end

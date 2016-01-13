@@ -1,11 +1,12 @@
 class Vehicle
   @@vehicles = []
 
-  def initialize(make, model, year)
+  def initialize(make, model, year, dealership_id)
     @make = make
     @model = model
     @year = year
     @id = @@vehicles.length() + 1
+    @dealership_id = dealership_id
   end
 
   def make
@@ -22,6 +23,10 @@ class Vehicle
 
   def id
     @id
+  end
+
+  def dealership_id
+    @dealership_id
   end
 
   def self.all

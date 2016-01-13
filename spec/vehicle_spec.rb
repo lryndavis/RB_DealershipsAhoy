@@ -24,6 +24,12 @@ describe(Vehicle) do
     end
   end
 
+  describe('#dealership_id') do
+    it('returns the id of the vehicle dealership') do
+      expect(toyota_prius_2000().dealership_id()).to(eq(1))
+    end
+  end
+
   describe('.all') do
     it('is empty at first') do
       expect(Vehicle.all()).to(eq([]))
@@ -58,7 +64,7 @@ describe(Vehicle) do
     it('will return a vehicle by its id number') do
       test_vehicle = toyota_prius_2000
       test_vehicle.save()
-      test_vehicle2 = Vehicle.new("Toyota", "Yaris", 2013)
+      test_vehicle2 = Vehicle.new("Toyota", "Yaris", 2013, 1)
       test_vehicle2.save()
       expect(Vehicle.find(test_vehicle.id())).to(eq(test_vehicle))
     end
@@ -66,5 +72,5 @@ describe(Vehicle) do
 end
 
 def toyota_prius_2000
-  Vehicle.new("Toyota", "Prius", 2000)
+  Vehicle.new("Toyota", "Prius", 2000, 1)
 end

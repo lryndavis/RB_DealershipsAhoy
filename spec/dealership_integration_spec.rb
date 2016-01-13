@@ -41,6 +41,17 @@ describe('the DealerShip paths') do
       expect(page).to(have_content('1989 Toyota Camry'))
     end
   end
+
+  describe('the view a vehicle path', {:type => :feature}) do
+    it("shows a vehicle of the user's choice") do
+      add_don_trumps_caddy_shack()
+      click_dealer_link()
+      add_a_camry()
+      click_link("Go to Don Trump's Caddy Shack")
+      click_link('1989 Toyota Camry')
+      expect(page).to(have_content('Toyota Camry 1989'))
+    end
+  end
 end
 
 def add_don_trumps_caddy_shack
@@ -53,4 +64,12 @@ end
 
 def click_dealer_link
   click_link("Don Trump's Caddy Shack")
+end
+
+def add_a_camry
+  click_link("Add a Vehicle")
+  fill_in('make', :with => 'Toyota')
+  fill_in('model', :with => 'Camry')
+  fill_in('year', :with => '1989')
+  click_button('Add')
 end
