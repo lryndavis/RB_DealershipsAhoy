@@ -19,6 +19,12 @@ describe('#year') do
   end
 end
 
+describe('.all') do
+  it('is empty at first') do
+    expect(Vehicle.all()).to(eq([]))
+  end
+end
+
 def toyota_prius_2000
   Vehicle.new("Toyota", "Prius", 2000)
 end

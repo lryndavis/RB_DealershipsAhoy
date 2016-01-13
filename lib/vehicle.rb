@@ -1,4 +1,6 @@
 class Vehicle
+  @@vehicles = []
+
   def initialize(make, model, year)
     @make = make
     @model = model
@@ -15,5 +17,9 @@ class Vehicle
 
   def year
     @year
+  end
+
+  def self.all
+    @@vehicles
   end
 end
