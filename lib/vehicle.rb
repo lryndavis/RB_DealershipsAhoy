@@ -8,4 +8,12 @@ class Vehicle
   def make
     @make
   end
+
+  def model
+    @model
+  end
+
+  def year
+    @year
+  end
 end
