@@ -26,4 +26,8 @@ class Vehicle
   def save
     @@vehicles.push(self)
   end
+
+  def self.clear
+    @@vehicles = []
+  end
 end

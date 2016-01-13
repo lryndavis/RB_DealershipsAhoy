@@ -33,6 +33,14 @@ describe('#save') do
   end
 end
 
+describe('#clear') do
+  it('will clear the array') do
+    toyota_prius_2000().save()
+    Vehicle.clear()
+    expect(Vehicle.all()).to(eq([]))
+  end
+end
+
 def toyota_prius_2000
   Vehicle.new("Toyota", "Prius", 2000)
 end
