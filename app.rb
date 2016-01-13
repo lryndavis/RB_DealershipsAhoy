@@ -22,3 +22,8 @@ post('/dealerships') do
   @dealerships = Dealership.all()
   erb(:success)
 end
+
+get('/dealerships/:id') do
+  @dealership = Dealership.find(params[:id].to_i())
+  erb(:dealership)
+end
