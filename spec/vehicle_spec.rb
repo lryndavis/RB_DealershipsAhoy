@@ -41,6 +41,14 @@ describe(Vehicle) do
       expect(Vehicle.all()).to(eq([]))
     end
   end
+
+  describe('#id') do
+    it('will create a unique id for each vehicle') do
+      test_vehicle = toyota_prius_2000
+      test_vehicle.save()
+      expect(test_vehicle.id()).to(eq(1))
+    end
+  end
 end
 
 def toyota_prius_2000

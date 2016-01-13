@@ -5,6 +5,7 @@ class Vehicle
     @make = make
     @model = model
     @year = year
+    @id = @@vehicles.length() + 1
   end
 
   def make
@@ -17,6 +18,10 @@ class Vehicle
 
   def year
     @year
+  end
+
+  def id
+    @id
   end
 
   def self.all
