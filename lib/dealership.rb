@@ -19,4 +19,15 @@ class Dealership
     @cars
   end
 
+  def save
+    @@dealerships.push(self)
+  end
+
+  def self.all
+    @@dealerships
+  end
+
+  def self.clear
+    @@dealerships = []
+  end
 end
