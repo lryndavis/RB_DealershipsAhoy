@@ -30,4 +30,14 @@ class Dealership
   def self.clear
     @@dealerships = []
   end
+
+  def self.find(id)
+    found_dealership = nil
+    @@dealerships.each() do |dealership|
+      if dealership.id().eql?(id)
+        found_dealership = dealership
+      end
+    end
+    found_dealership
+  end
 end
